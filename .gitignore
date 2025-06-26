@@ -1,0 +1,35 @@
+# Node
+node_modules/
+
+# Build output
+.next/
+out/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Env
+.env*
+
+# Misc
+*.local
+*.log
+
+# Monorepo
+apps/*/node_modules/
+apps/*/.next/
+apps/*/dist/
+packages/*/node_modules/
+packages/*/dist/ 

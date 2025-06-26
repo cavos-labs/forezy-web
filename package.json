@@ -1,0 +1,19 @@
+{
+  "name": "forezy-monorepo",
+  "version": "1.0.0",
+  "description": "Forezy Prediction Market Platform",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/forezy",
+    "build": "npm run build --workspace=apps/forezy",
+    "start": "npm run start --workspace=apps/forezy",
+    "lint": "npm run lint --workspace=apps/forezy"
+  },
+  "keywords": ["prediction-markets", "defi", "monorepo"],
+  "author": "",
+  "license": "ISC"
+} 

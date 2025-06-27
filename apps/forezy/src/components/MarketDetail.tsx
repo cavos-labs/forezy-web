@@ -38,6 +38,11 @@ function formatDate(dateString: string): string {
   })
 }
 
+function toMarketStatus(status: string): 'active' | 'resolved' | 'pending_payout' {
+  if (status === 'active' || status === 'resolved' || status === 'pending_payout') return status
+  return 'active'
+}
+
 export default function MarketDetail({ marketId }: { marketId: string }) {
   const market = MOCK_MARKETS.find((m) => m.id === marketId) || MOCK_MARKETS[0]
   const priceA = (market.total_shares_a / market.total_liquidity) * 100
@@ -70,7 +75,7 @@ export default function MarketDetail({ marketId }: { marketId: string }) {
             <span className="text-lg font-bold text-secondary">${priceB.toFixed(2)}</span>
           </div>
         </div>
-        <BettingPanel market={market} />
+        <BettingPanel market={{ ...market, status: toMarketStatus(market.status) }} />
       </div>
     </div>
   )
